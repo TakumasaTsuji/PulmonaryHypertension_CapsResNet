@@ -1,2 +1,2 @@
-# Pulmonary hypertension classification using CapsuleResidualNetwork
+# Pulmonary hypertension classification using CapsResNet
 
