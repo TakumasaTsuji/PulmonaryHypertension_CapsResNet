@@ -1,2 +1,2 @@
-# Pulmonary hypertension classification using Chest X-ray
+# Pulmonary hypertension classification using CapsuleResidualNetwork
 
