@@ -3,7 +3,7 @@
 ---
 ### Key Details
 * Based on the work [Dynamic Routing Between Capsules](https://arxiv.org/abs/1710.09829)
-* Thanks to [soske](https://github.com/soskek/dynamic_routing_between_capsules) for the chainer implementation of Capsule Network.
+* Thanks to [soskek](https://github.com/soskek/dynamic_routing_between_capsules) for the chainer implementation of Capsule Network.
 
 
 
