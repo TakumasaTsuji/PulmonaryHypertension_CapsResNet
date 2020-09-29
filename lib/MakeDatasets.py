@@ -297,16 +297,11 @@ if __name__ == '__main__':
     PAm_threshold = 20
     size = 512
     
-    csv_path = "/home/tsuji/Dropbox/deep_learning/Tokushima_project/PAm/chainer/catheter_data/PAm_data_20200916.csv"
-    dir_path = "/data/HDD1/Tokushima_Project/Data/XP_Tokushima_png"
+    csv_path = "./Cateter_data.csv"
+    dir_path = "./Chest_Xray_dataset"
 
     dataset = load_tokushima_dataset(csv_path, dir_path, PAm_threshold=PAm_threshold)
-    
-    #train_dataset, validation_dataset, test_dataset = split_dataset(dataset, val_num, test_num, seed=0)
-    #train_dataset, validation_dataset, test_dataset = split_cross_validation_dataset(
-    #    dataset, k=1, k_folds=10, seed=0)
-    
-    
+        
     #k-fold cross validation    
     train_dataset, validation_dataset, test_dataset = split_cross_validation_dataset(
         dataset, k=1, k_folds=10, seed=0)

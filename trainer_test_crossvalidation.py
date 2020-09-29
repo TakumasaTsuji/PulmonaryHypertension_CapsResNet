@@ -32,7 +32,6 @@ from models import CapsResNet
 
         
 def run(args):
-    #model, size = load_model(args)
     model = CapsResNet.CapsResNet(cls=args.cls)
     size  = 512 
   
@@ -133,7 +132,6 @@ def train_model(args, model, train_iter, validation_iter, save_train_path):
 
 def test_model(args, model, best_model_path, test, test_dataset, save_test_path):
      
-    #model, size = load_model(args)
     print(best_model_path)
     serializers.load_npz(best_model_path, model)
     
@@ -164,7 +162,7 @@ def test_model(args, model, best_model_path, test, test_dataset, save_test_path)
      
     
     label_mat = np.zeros((test.__len__(), args.cls))
-    pred_score_mat = np.zeros((test.__len__(), args.cls)) # gyou, retu
+    pred_score_mat = np.zeros((test.__len__(), args.cls)) 
     classification_result = []
     classification_result.append(["Patient ID", "label", "pred" ])
 
@@ -181,11 +179,7 @@ def test_model(args, model, best_model_path, test, test_dataset, save_test_path)
             label = int(t)
             convolved_image = model.convolution(Variable(xp.asarray(x[np.newaxis])))
                 
-            if "Caps" in args.ModelName:    
-                vs_norm, vs = model.output(convolved_image)
-            else:
-                vs_norm = model.output(convolved_image)
-                
+            vs_norm, vs = model.output(convolved_image)    
             vs_norm = F.softmax(vs_norm)
             predicted_vector = chainer.cuda.to_cpu(vs_norm.data[0])
             pred_score_mat[i] = predicted_vector
@@ -214,10 +208,7 @@ def test_model(args, model, best_model_path, test, test_dataset, save_test_path)
             classification_result.append([name, label, pred])
                 
             """---GradCAM ---"""
-            #raw_image = np.load(test.datasets[i][0])
-            #raw_image = np.load(test_dataset[i][0])
             raw_image = imread(test_dataset[i][0])
-            #name = name.replace("npy", "png")
             split_name = name.split("/")
             ID = split_name[-1]
             
@@ -233,7 +224,7 @@ def test_model(args, model, best_model_path, test, test_dataset, save_test_path)
 
 
 def main():
-    parser = argparse.ArgumentParser(description='Tokushima_Classification')
+    parser = argparse.ArgumentParser(description='Chest_Xray_Classification')
     
     parser.add_argument("--DataDirPath", "-p", type=str, default="path",
                         help="This is path to load training data")
@@ -241,8 +232,6 @@ def main():
                         help="This is path to load training data")
     parser.add_argument("--lr", "-lr", type=float, default=1.0,
                         help="This value is learning rate of Adam optimization")
-    parser.add_argument("--ModelName", "-m", type=str, default="VGG16",
-                        help="Training model name")
     parser.add_argument("--PretrainedModelPath", "-pr", type=str, default="Nan",
                         help="This is path to load the parameters of pretrained model")
     parser.add_argument('--batchsize', '-b', type=int, default=16,

@@ -22,9 +22,6 @@ def open_csv(filename):
     data = []
     with open(filename, 'r') as filename:
         reader = csv.reader(filename)
-        # ヘッダ行は特別扱い
-        #header = next(reader)
-        # 中身
         for row in reader:
             data.append(row)
     return data
@@ -172,16 +169,7 @@ def Savefig(savename):
     
         
 if __name__=='__main__':
-    path  = "/media/tsuji/Tokushima_Project/result/PCWm/hirosemachine/classification/5ensemble/Resnet50/2/0.00018456840873387327/test_newdata"
-    path = "/media/tsuji/bd4e7470-cf69-40b7-af32-cd624560165b/Tokushima_Project/result/PCWm/hirosemachine/classification/5ensemble/Resnet50/2/0.00018456840873387327/test_newdata"
-    pred_path = os.path.join(path, "sum_pred.csv")
-    label_path = os.path.join(path, "sum_label.csv")
-    
-    
-    sum_pred  = np.array(open_csv(pred_path))[:, 1:].astype(np.float32)
-    sum_label = np.array(open_csv(label_path))[:, 1:].astype(np.float32)
-    
-    #ROC(sum_label, sum_pred)
+   pass
     
     
 

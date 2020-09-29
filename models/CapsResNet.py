@@ -211,9 +211,7 @@ class CapsResNet(chainer.Chain):
 
     
   
-    
-
-    def calculate_correct(self, v, t):
+        def calculate_correct(self, v, t):
         return (self.xp.argmax(v.data, axis=1) == t).sum()
 
         
