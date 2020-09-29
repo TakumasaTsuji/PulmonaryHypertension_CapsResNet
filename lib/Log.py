@@ -79,9 +79,6 @@ def load_best_model_path(logdirpath):
     print("Best validation accuracy : " + str(best_validation_accuracy))
     print("--------------------------------------------------------------------")
     best_model_path = os.path.join(logdirpath, "model_epoch_{}.npz".format(best_epoch))
-    #best_model_path = os.path.join(logdirpath, "trained_model.npz")
-
-    #return best_model_path, best_epoch
     return best_validation_accuracy, best_model_path
 
 
@@ -99,11 +96,4 @@ def load_best_model_path_in_search(pathdir):
     return best_model_path_in_search_list
     
 if __name__ == "__main__":
-    #VGG16
-    #logdirpath = "/media/tsuji/Tokushima_Project/result/PCWm/hirosemachine/5ensemble/VGG16/1/0.0004340850909121237/"
-    
-    #best_model_path, best_epoch = load_best_model_path(logdirpath)
-    
-    pathdir = "/data/HDD1/Tokushima_Project/result/PAm/revise/2class/CapsuleResNet_256"
-    best_model_path = load_best_model_path_in_search(pathdir)
-    
+    pass
