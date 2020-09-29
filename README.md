@@ -23,4 +23,5 @@
 ### Runining CapsResNet
 ```
 $ bash run_crossvalidation.sh
+$ bash run_nested_crossvalidation.sh
 ```
