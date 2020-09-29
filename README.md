@@ -18,4 +18,9 @@
 * Chainer 7.2.0
 * Cupy 7.3.0
 * Cuda 10.0
+
 ---
+### Runining CapsResNet
+```
+bash run_crossvalidation.sh
+```
