@@ -1,6 +1,7 @@
 # Pulmonary hypertension classification using CapsResNet
 
 ---
+[![DOI](https://zenodo.org/badge/298153172.svg)](https://zenodo.org/badge/latestdoi/298153172)
 ### Key Details
 * Based on the work [Deep Residual Learning for Image Recognition](https://www.cvfoundation.org/openaccess/content_cvpr_2016/papers/He_Deep_Residual_Learning_CVPR_2016_paper.pdf) and [Dynamic Routing Between Capsules](https://arxiv.org/abs/1710.09829)
 * Thanks to [soskek](https://github.com/soskek/dynamic_routing_between_capsules) for the [chainer](https://github.com/chainer/chainer) implementation of Capsule Network.
