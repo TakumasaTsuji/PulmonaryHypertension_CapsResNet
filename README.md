@@ -1,5 +1,5 @@
 # Pulmonary hypertension classification using CapsResNet
-
+* This repository contains Chainer implementation of the following paper: [Deep learning to predict elevated pulmonary artery pressure in patients with suspected pulmonary hypertension using standard chest X ray](https://www.nature.com/articles/s41598-020-76359-w)
 ---
 [![DOI](https://zenodo.org/badge/298153172.svg)](https://zenodo.org/badge/latestdoi/298153172)
 ### Key Details
